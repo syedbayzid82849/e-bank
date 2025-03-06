@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-slate-800 ">
+    <main class="max-w-md min-h-screen mx-auto bg-slate-100">
+        <nav class="flex justify-around py-3">
+            <div>
+                <img class="w-10 " src="assets/Group.png" alt="logo">
+            </div>
+            <div>
+                <h1 class="font-extrabold  text-2xl ">$<span id="main-amount">2400</span></h1>
+                <p class="font-light">Available Balance</p>
+            </div>
+            <div>
+                
+                <button id="logout-btn" class="btn rounded-md"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</button>
+            </div>
+        </nav>
+        <hr style="border: 1px solid #ddd;">
+
+        <section class="px-6 pt-5 ">
+            <section>
+                <h1 class="font-bold text-2xl">🔥 Welcome to Payooo!</h1>
+                <p class="text-[#a2a2a2]">Enjoy easy and convenient financial services with us. Cash-out charge is low and </p>
+            </section>
+
+            <section class="cards grid grid-cols-3 gap-4 pt-5">
+                <button id="add-maney-btn" class="hover:scale-110 transition-transform duration-300 rounded-xl border-2 border-[#d0cfcf]  text-center flex flex-col items-center justify-center p-3">
+                    <img class="w-8 mx-auto" src="assets/wallet1.png" alt="">
+                    <h3 class="text-sm min-h-[30px]">Add Money</h3>
+                </button>
+                <button id="cash-out-btn" class="hover:scale-110 transition-transform duration-300 rounded-xl border-2 border-[#d0cfcf]  text-center flex flex-col items-center justify-center p-3">
+                    <img class="w-8 mx-auto" src="assets/send1.png" alt="">
+                    <h3 class="text-sm min-h-[30px]">Cash-out</h3>
+                </button>
+                <button id="transfer-btn" class="hover:scale-110 transition-transform duration-300 rounded-xl border-2 border-[#d0cfcf]  text-center flex flex-col items-center justify-center p-3">
+                    <img class="w-8 mx-auto" src="assets/money1.png" alt="">
+                    <h3 class="text-sm min-h-[30px]">Transfer Money</h3>
+                </button>
+                <button id="bonus-btn" class="hover:scale-110 transition-transform duration-300 rounded-xl border-2 border-[#d0cfcf]  text-center flex flex-col items-center justify-center p-3">
+                    <img class="w-8 mx-auto" src="assets/bonus1.png" alt="">
+                    <h3 class="text-sm min-h-[30px]">Get Bonus</h3>
+                </button>
+                <button id="bill-btn" class="hover:scale-110 transition-transform duration-300 rounded-xl border-2 border-[#d0cfcf]  text-center flex flex-col items-center justify-center p-3">
+                    <img class="w-8 mx-auto" src="assets/purse1.png" alt="">
+                    <h3 class="text-sm min-h-[30px]">Pay Bill</h3>
+                </button>
+                <button id="transaction-btn" class="hover:scale-110 transition-transform duration-300 rounded-xl border-2 border-[#d0cfcf]  text-center flex flex-col items-center justify-center p-3">
+                    <img class="w-8 mx-auto" src="assets/transaction1.png" alt="">
+                    <h3 class="text-sm min-h-[30px]">Transactions</h3>
+                </button>
+            </section>
+            
+        </section>
+
+        <!-- Add money  -->
+        <section id="add-money" class="hidden px-6 ">
+            <h1 class="pt-7 font-semibold text-lg text-center text-blue-500">Add Money</h1>
+
+            <div class="w-f">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body ">
+                      <fieldset class="fieldset ">
+                        <legend>Select Bank</legend>
+                        <select class="select rounded-3xl">
+                            <option disabled selected>Select Your Bank </option>
+                            <option>Bkash</option>
+                            <option>Nagad</option>
+                            <option>Rocket</option>
+                            <option>DBBL</option>
+                          </select>
+                        <label  class="fieldset-label" >Bank Account Number</label>
+                        <input id="account-number" type="number" class="input rounded-3xl " placeholder="Enter 11 digit account number" required/>
+                        <label  class="fieldset-label" >Amount</label>
+                        <input id="amount-number" type="number" class="input rounded-3xl " placeholder="type your amount" required/>
+                        <label  class="fieldset-label">Pin Number</label>
+                        <input id="pin" type="number" class="input rounded-3xl " placeholder="Enter 4 Digit Pin" required/>
+                        <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">Add Money</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <!-- cash out  -->
+        <section id="cash-out" class="hidden px-6 ">
+            <h1 class="pt-7 font-semibold text-lg text-center text-blue-500">Cash-Out</h1>
+
+            <div class="w-f">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body ">
+                      <fieldset class="fieldset ">                        
+                        <label  class="fieldset-label" >Agent Number</label>
+                        <input id="agent-number" type="number" class="input rounded-3xl " placeholder="Enter 11 digit account number" required/>
+                        <label  class="fieldset-label" >Amount</label>
+                        <input id="withdraw-amount" type="number" class="input rounded-3xl " placeholder="type your amount" required/>
+                        <label  class="fieldset-label">Pin Number</label>
+                        <input id="pin" type="number" class="input rounded-3xl " placeholder="Enter 4 Digit Pin" required/>
+                        <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">WithDraw</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <!-- transfer money  -->
+        <section id="transfer-money" class="hidden px-6 ">
+            <h1 class="pt-7 font-semibold text-lg text-center text-blue-500">Cash-Out</h1>
+
+            <div class="w-f">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body ">
+                      <fieldset class="fieldset ">                        
+                        <label  class="fieldset-label" >Account Number</label>
+                        <input id="agent-number" type="number" class="input rounded-3xl " placeholder="Enter 11 digit account number" required/>
+                        <label  class="fieldset-label" >Amount</label>
+                        <input id="withdraw-amount" type="number" class="input rounded-3xl " placeholder="type your amount" required/>
+                        <label  class="fieldset-label">Pin Number</label>
+                        <input id="pin" type="number" class="input rounded-3xl " placeholder="Enter 4 Digit Pin" required/>
+                        <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">Send Now</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <!-- Ger Bonus  -->
+        <section id="get-bonus" class="hidden px-6 ">
+            <h1 class="pt-7 font-semibold text-lg text-center text-blue-500">Get Bonus </h1>
+
+            <div class="w-f">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body ">
+                      <fieldset class="fieldset ">                        
+                        <label  class="fieldset-label" >Enter Bonus Coupon</label>
+                        <input id="coupon-code" type="text" class="input rounded-3xl " placeholder="Enter Your Coupon" required/>
+                        <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">Get Bonus</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        <!-- pay bill  -->
+        <section id="pay-bill" class="hidden px-6 ">
+          <h1 class="pt-7 font-semibold text-lg text-center text-blue-500">Pay Bill </h1>
+
+          <div class="w-f">
+              <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                  <form class="card-body ">
+                    <fieldset class="fieldset ">
+                      <legend>Select To Pay</legend>
+                      <select class="select rounded-3xl">
+                          <option disabled selected>Select Bank </option>
+                          <option>Bkash</option>
+                          <option>Nagad</option>
+                          <option>Rocket</option>
+                          <option>DBBL</option>
+                        </select>
+                      <label  class="fieldset-label" >Biller Account Number</label>
+                      <input id="account-number" type="number" class="input rounded-3xl " placeholder="Enter account number" required/>
+                      <label  class="fieldset-label" >Amount To Pay </label>
+                      <input id="amount-number" type="number" class="input rounded-3xl " placeholder="Add Amount to pay" required/>
+                      <label  class="fieldset-label">Pin Number</label>
+                      <input id="pin" type="number" class="input rounded-3xl " placeholder="Enter 4 Digit Pin" required/>
+                      <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">Pay Now </button>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+      </section>
+
+      <!-- transaction  -->
+      <section id="transaction-history" class="hidden px-6 ">
+        <h1 class="pt-7 font-semibold text-lg text-center text-blue-500">Get Bonus </h1>
+
+        <div class="w-f">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body ">
+                  <fieldset class="fieldset ">                        
+                    <label  class="fieldset-label" >Enter Bonus Coupon</label>
+                    <input id="coupon-code" type="text" class="input rounded-3xl " placeholder="Enter Your Coupon" required/>
+                    <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">Get Bonus</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    </main>
+
+    <script>
+
+        document.getElementById('login-btn').addEventListener('click', function(event){
+            event.preventDefault();
+
+            const amountNumber=document.getElementById('amount-number').value;
+            const convertedAmountNumber= parseFloat(amountNumber);
+
+            const pin = document.getElementById('pin').value;
+            const convertedPin = parseInt(pin);
+
+            const mainAmount = document.getElementById('main-amount').innerText;
+            const convertedMainAmount=parseFloat(mainAmount);
+
+            if(convertedPin===8284){
+                const sum = convertedMainAmount + convertedAmountNumber;
+
+                document.getElementById('main-amount').innerText = sum ;
+
+                alert('Your Amount has been Added.')
+
+            }
+            else{
+                console.log('wrong pin ');
+            }
+
+        });
+        document.getElementById('logout-btn').addEventListener('click', function(){
+          window.location.href = "index.html";
+        });
+
+
+
+
+        document.getElementById('add-maney-btn').addEventListener('click', function(){
+        document.getElementById('add-money').style.display='block';
+        document.getElementById('cash-out').style.display='none';
+        document.getElementById('transfer-money').style.display='none';
+        document.getElementById('get-bonus').style.display='none';
+        document.getElementById('pay-bill').style.display='none';
+        document.getElementById('transaction-history').style.display='none';
+        });
+
+        document.getElementById('cash-out-btn').addEventListener('click', function(){
+        document.getElementById('add-money').style.display='none';
+        document.getElementById('cash-out').style.display='block';
+        document.getElementById('transfer-money').style.display='none';
+        document.getElementById('get-bonus').style.display='none';
+        document.getElementById('pay-bill').style.display='none';
+        document.getElementById('transaction-history').style.display='none';
+        });
+
+        document.getElementById('transfer-btn').addEventListener('click', function(){
+        document.getElementById('add-money').style.display='none';
+        document.getElementById('cash-out').style.display='none';
+        document.getElementById('transfer-money').style.display='block';
+        document.getElementById('get-bonus').style.display='none';
+        document.getElementById('pay-bill').style.display='none';
+        document.getElementById('transaction-history').style.display='none';
+        });
+
+        document.getElementById('bonus-btn').addEventListener('click', function(){
+        document.getElementById('add-money').style.display='none';
+        document.getElementById('cash-out').style.display='none';
+        document.getElementById('transfer-money').style.display='none';
+        document.getElementById('get-bonus').style.display='block';
+        document.getElementById('pay-bill').style.display='none';
+        document.getElementById('transaction-history').style.display='none';
+        });
+
+        document.getElementById('bill-btn').addEventListener('click', function(){
+        document.getElementById('add-money').style.display='none';
+        document.getElementById('cash-out').style.display='none';
+        document.getElementById('transfer-money').style.display='none';
+        document.getElementById('get-bonus').style.display='none';
+        document.getElementById('pay-bill').style.display='block';
+        document.getElementById('transaction-history').style.display='none';
+        });
+
+        document.getElementById('transaction-btn').addEventListener('click', function(){
+        document.getElementById('add-money').style.display='none';
+        document.getElementById('cash-out').style.display='none';
+        document.getElementById('transfer-money').style.display='none';
+        document.getElementById('get-bonus').style.display='none';
+        document.getElementById('pay-bill').style.display='none';
+        document.getElementById('transaction-history').style.display='block';
+        });
+
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
