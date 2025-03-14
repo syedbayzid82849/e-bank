@@ -84,7 +84,7 @@
                         <input id="amount-number" type="number" class="input rounded-3xl " placeholder="type your amount" required/>
                         <label  class="fieldset-label">Pin Number</label>
                         <input id="pin" type="number" class="input rounded-3xl " placeholder="Enter 4 Digit Pin" required/>
-                        <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">Add Money</button>
+                        <button id="add-money-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">Add Money</button>
                       </fieldset>
                     </form>
                   </div>
@@ -101,13 +101,13 @@
                   <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form class="card-body ">
                       <fieldset class="fieldset ">                        
-                        <label  class="fieldset-label" >Agent Number</label>
-                        <input id="agent-number" type="number" class="input rounded-3xl " placeholder="Enter 11 digit account number" required/>
-                        <label  class="fieldset-label" >Amount</label>
-                        <input id="withdraw-amount" type="number" class="input rounded-3xl " placeholder="type your amount" required/>
+                        <label  class="fieldset-label" >Number</label>
+                        <input value="01703480840" id="agent-number" type="number" class="input rounded-3xl " placeholder="Enter 11 digit account number" required/>
+                        <label   class="fieldset-label" >Amount</label>
+                        <input id="cash-Out-amount"  id="withdraw-amount" type="number" class="input rounded-3xl " placeholder="type your amount" required/>
                         <label  class="fieldset-label">Pin Number</label>
-                        <input id="pin" type="number" class="input rounded-3xl " placeholder="Enter 4 Digit Pin" required/>
-                        <button id="login-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">WithDraw</button>
+                        <input value="8284" id="cash-out-pin" type="number" class="input rounded-3xl " placeholder="Enter 4 Digit Pin" required/>
+                        <button id="withdraw-btn" class="btn btn-neutral mt-4 bg-blue-500 border-none rounded-3xl ">WithDraw</button>
                       </fieldset>
                     </form>
                   </div>
@@ -209,6 +209,8 @@
 
     </main>
 
+
+    
     <script src="second-page.js"></script>
 </body>
 </html>

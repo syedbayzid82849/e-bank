@@ -1,4 +1,5 @@
-document.getElementById('login-btn').addEventListener('click', function(event){
+// add money ------------------
+document.getElementById('add-money-btn').addEventListener('click', function(event){
     event.preventDefault();
 
     const amountNumber=document.getElementById('amount-number').value;
@@ -23,6 +24,41 @@ document.getElementById('login-btn').addEventListener('click', function(event){
     }
 
 });
+
+
+// cash out ------------------------------------------
+document.getElementById('withdraw-btn').addEventListener('click', function(event){
+    event.preventDefault();
+
+
+    const cashOutAmount =document.getElementById('cash-Out-amount').value;
+    const convertedcashOutAmount = parseFloat(cashOutAmount);
+
+
+    const pin = document.getElementById('cash-out-pin').value;
+    const convertedPin = parseInt(pin);
+    console.log(typeof convertedPin);
+
+    const mainAmount = document.getElementById('main-amount').innerText;
+    const convertedMainAmount=parseFloat(mainAmount);
+
+
+    if(convertedPin===8284){
+        const sum = convertedMainAmount - convertedcashOutAmount;
+
+        document.getElementById('main-amount').innerText = sum ;
+
+        alert('Your Withdraw Successfull.');
+
+    }
+    else{
+        alert('wrong pin ');
+    }
+
+  });
+
+
+// log out button ------------------------------
 document.getElementById('logout-btn').addEventListener('click', function(){
   window.location.href = "index.html";
 });
